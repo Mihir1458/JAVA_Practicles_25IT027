@@ -1,0 +1,7 @@
+=== MINIBANK TRANSACTION REPORT ===
+Total Deposits   : Rs. 5000
+Total Withdrawals: Rs. 7000
+Net Change       : Rs. -2000
+
+=== LOG FILE DETAILS ===
+File: transactions.log, Size: 65 bytes, Modified: 2026-10-31T12:59:18.2528704Z

@@ -1,0 +1,39 @@
+package model;
+
+public class SavingsAccount extends Account implements Premium {
+
+    private long minBalance;
+private static final long serialVersionUID = 1L;
+    public SavingsAccount(
+            String ownerName,
+            long openingBalance,
+            long minBalance) {
+
+        super(ownerName, openingBalance);
+
+        if (minBalance < 0) {
+            throw new IllegalArgumentException(
+                "Minimum balance cannot be negative."
+            );
+        }
+
+        this.minBalance = minBalance;
+    }
+
+    public long getMinBalance() {
+        return minBalance;
+    }
+
+    @Override
+    public double interestRate() {
+        return 4.0;
+    }
+
+    @Override
+    public boolean canWithdraw(long amount) {
+
+        return amount > 0
+                && amount <= getBalance()
+                && getBalance() - amount >= minBalance;
+    }
+}
